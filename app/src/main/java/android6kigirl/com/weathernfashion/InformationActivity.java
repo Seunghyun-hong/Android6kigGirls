@@ -64,7 +64,7 @@ public class InformationActivity extends AppCompatActivity {
             codyImageView.setImageResource(R.drawable.cody19);
         } else if (19 < mTemp && mTemp <= 22) {
             codyImageView.setImageResource(R.drawable.cody22);
-        } else if (22 < mTemp && mTemp <= 26) {
+        } else if (22 < mTemp && mTemp < 27) {
             codyImageView.setImageResource(R.drawable.cody26);
         } else {
             codyImageView.setImageResource(R.drawable.cody27);
