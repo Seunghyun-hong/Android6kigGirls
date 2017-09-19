@@ -45,7 +45,7 @@ public class InformationActivity extends AppCompatActivity {
         mTemp = intent.getDoubleExtra("temp", 0);
         outputTextView.setText(name); // 받아온 도시이름 설정해주기
         currentTempTextView.setText("현재기온 : " + mTemp); // 받아온 기온 설정하기.
-        Glide.with(this).load(intent.getIntExtra("icon",0)).into(weatherImageView);
+        Glide.with(this).load(intent.getIntExtra("icon",0)).into(weatherImageView);  // 받아온 날씨이미지 넣기!
 
         setWeatherCody();
     }
@@ -53,21 +53,21 @@ public class InformationActivity extends AppCompatActivity {
 
     private void setWeatherCody() {
         if (mTemp <= 5) { // 온도가 5도 이하
-            codyImageView.setImageResource(R.drawable.cody);
+            codyImageView.setImageResource(R.drawable.cody5);
         } else if (5 < mTemp && mTemp <= 9) {
-            codyImageView.setImageResource(R.drawable.cody);
+            codyImageView.setImageResource(R.drawable.cody9);
         } else if (9 < mTemp && mTemp <= 11) {
-            codyImageView.setImageResource(R.drawable.cody);
+            codyImageView.setImageResource(R.drawable.cody11);
         } else if (11 < mTemp && mTemp <= 16) {
-            codyImageView.setImageResource(R.drawable.cody);
+            codyImageView.setImageResource(R.drawable.cody16);
         } else if (16 < mTemp && mTemp <= 19) {
-            codyImageView.setImageResource(R.drawable.cody);
+            codyImageView.setImageResource(R.drawable.cody19);
         } else if (19 < mTemp && mTemp <= 22) {
-            codyImageView.setImageResource(R.drawable.cody);
+            codyImageView.setImageResource(R.drawable.cody22);
         } else if (22 < mTemp && mTemp <= 26) {
-            codyImageView.setImageResource(R.drawable.cody);
+            codyImageView.setImageResource(R.drawable.cody26);
         } else {
-            codyImageView.setImageResource(R.drawable.cody);
+            codyImageView.setImageResource(R.drawable.cody27);
         }
     }
 }

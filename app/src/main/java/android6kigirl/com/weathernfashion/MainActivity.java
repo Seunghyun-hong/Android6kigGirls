@@ -3,6 +3,7 @@ package android6kigirl.com.weathernfashion;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -25,11 +26,15 @@ public class MainActivity extends AppCompatActivity {
         mFirstCityNameEditText = (EditText) findViewById(R.id.first_city_edit_text);
 
         mWeatherUtil = new WeatherUtil();
+
+    }
+
+    public void onClickedSaveButton(View view) {
         search(mFirstCityNameEditText.getText().toString());
     }
 
     // 검색 기능을 만들자
-    private void search(String cityName){
+    private void search(String cityName) {
         mWeatherUtil.getApiService().getCurrentWeather(cityName).enqueue(new Callback<CurrentWeather>() {
             @Override //성공
             public void onResponse(Call<CurrentWeather> call, Response<CurrentWeather> response) {
