@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 import android6kigirl.com.weathernfashion.retrofit.WeatherUtil;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -43,6 +45,7 @@ public class InformationActivity extends AppCompatActivity {
         mTemp = intent.getDoubleExtra("temp", 0);
         outputTextView.setText(name); // 받아온 도시이름 설정해주기
         currentTempTextView.setText("현재기온 : " + mTemp); // 받아온 기온 설정하기.
+        Glide.with(this).load(intent.getIntExtra("icon",0)).into(weatherImageView);
 
         setWeatherCody();
     }

@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), InformationActivity.class);
                 intent.putExtra("temp", response.body().getMain().getTemp()); // 현재 온도 가져오기
                 intent.putExtra("cityName", mFirstCityNameEditText.getText()); // 현재 지역 가져오기
+                intent.putExtra("icon", response.body().getWeather().get(0).getIcon());
                 startActivity(intent);
 
             }
